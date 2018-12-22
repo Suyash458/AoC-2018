@@ -5,8 +5,8 @@ sums = set()
 running_sum = 0
 
 for i in cycle(numbers):
-    if running_sum + i in sums:
-        print(running_sum + i)
+    running_sum += i    
+    if running_sum in sums:
+        print(running_sum)
         break
-    sums.add(running_sum + i)
-    running_sum += i
+    sums.add(running_sum)
