@@ -22,5 +22,3 @@ print(max_id[0] * times[max_id[0]].index(max(times[max_id[0]])))
 
 max_id = max([(id, max(times[id])) for id in times], key=lambda x: x[1])
 print(max_id[0] * times[max_id[0]].index(max(times[max_id[0]])))
-
-
