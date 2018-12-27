@@ -13,7 +13,9 @@ def job_duration(job):
     return 60 + (ord(job) - ord('A') - 1)
 
 def is_candidate(job):
-    return all([(dep in completed) for dep in deps]) and job not in candidates + completed + [_[0] for _ in workers]
+    if job == 'C':
+        print(jobs[job])
+    return all([(dep in completed) for dep in jobs[job]]) and job not in candidates + completed + [_[0] for _ in workers]
 
 for instruction in instructions:
     for dep, job in re.findall(r'.* (.) .* (.) .*', instruction):
